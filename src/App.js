@@ -10,7 +10,6 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
-  
   // Run once
   useEffect(() => {
     getLocalTodos();
@@ -61,7 +60,7 @@ function App() {
         setTodos={setTodos}
         setStatus={setStatus}
         />
-      <TodoList setTodos={setTodos} todos={todos} filteredTodos={filteredTodos}/>
+      <TodoList setTodos={setTodos} todos={todos} filteredTodos={filteredTodos} />
     </div>
   );
 }
