@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const Todo = ({ text, todo, todos, setTodos}) => {
+const Todo = ({ todo, todos, setTodos}) => {
 
     const [newText, setNewText] = useState(todo.text);
     const [editMode, setEditMode] = useState(false);
@@ -22,7 +22,6 @@ const Todo = ({ text, todo, todos, setTodos}) => {
     }
     const setTextHandler = () => {
       setEditMode(true)
-      // setTodoText(text)
     };
     const saveTodo = () => {
         setTodos(
@@ -39,7 +38,9 @@ const Todo = ({ text, todo, todos, setTodos}) => {
     }
     return (
         <div className="todo">
-            <button onClick={completeHandler} className="complete-btn"><i className="fas fa-check"></i></button>
+            <button onClick={completeHandler} className="complete-btn">
+                <i className="fas fa-check"></i>
+            </button>
 
             {(editMode) 
               ? (<div className="todo-input-wrapper">
@@ -54,10 +55,16 @@ const Todo = ({ text, todo, todos, setTodos}) => {
                 </div>
                 
                 )
-              : (<li onDoubleClick={setTextHandler} className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>)
+              : (<li onDoubleClick={setTextHandler} 
+                    className={`todo-item ${todo.completed ? "completed" : ""}`}
+                >
+                    {newText}
+                </li>)
             }
             
-            <button onClick={deleteHandler} className="trash-btn"><i className="fas fa-trash"></i></button>
+            <button onClick={deleteHandler} className="trash-btn">
+                <i className="fas fa-trash"></i>
+            </button>
         </div>
     );
 }

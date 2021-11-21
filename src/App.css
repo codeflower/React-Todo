@@ -80,14 +80,14 @@ form button:hover {
 
 .todo-input-wrapper {
   display: flex;
-  width: 200px;
+  width: 100%;
 }
 
 .todo-input-wrapper .todo-item-input {
   padding: 0rem 0.5rem;
   line-height: 3em;
   border: none;
-  width: 150px;
+  width: 90%;
 }
 
 .todo-item-input-button {
